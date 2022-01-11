@@ -14,10 +14,6 @@ sudo  apt install -y mongodb-org
 # Start service MongoDB
 sudo  systemctl start mongod
 sudo  systemctl enable mongod
-# Check status service MongoDB
-sudo systemctl status mongod
-# Check Ruby
-pwd
 cd /home/yc-user
 git clone -b monolith https://github.com/express42/reddit.git 
 cd reddit && bundle install
