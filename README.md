@@ -23,3 +23,11 @@ Host someinternalhost
 	User appuser
 	ProxyJump bastion
 
+# ДЗ "Деплой тестового приложения":
+# Задание 1:
+Данные для подключения к облачному приложению:
+```
+testapp_IP = 62.84.118.61
+testapp_port = 9292
+```
+
