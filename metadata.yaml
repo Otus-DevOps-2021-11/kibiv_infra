@@ -1,4 +1,5 @@
 #cloud-config
+timezone: Europe/Moscow
 repo_update: true
 repo_upgrade: true
 apt:
