@@ -11,13 +11,16 @@ bundler -v
 # Install MongoDB
 sudo  apt update
 sudo  apt install -y mongodb-org
+# Change IP-address MongoDB
+sudo sed -i -e 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
 # Start service MongoDB
 sudo  systemctl start mongod
 sudo  systemctl enable mongod
+# Check Ruby
+pwd
 cd /home/yc-user
 git clone -b monolith https://github.com/express42/reddit.git 
 cd reddit && bundle install
 # Deploy App
 puma -d
 ps aux | grep puma
-
