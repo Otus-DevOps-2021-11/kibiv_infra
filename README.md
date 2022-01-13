@@ -31,4 +31,21 @@ Host someinternalhost
 testapp_IP = 51.250.14.149
 testapp_port = 9292
 ```
+# Задание 2:
+Созданы следующие скрипты (права на выполнение добавлены):
+- install_ruby.sh
+- install_mongodb.sh
+- deploy.sh
 
+# Дополнительное задание 3:
+Создан startup script
+- startup_script.sh
+
+Команда для создания готового инстанса 
+- ./create_instance.sh
+
+Для прохождения автотестов необходимо разрешить подключаться к mongodb по всем IP-адресам
+
+````
+sudo sed 's/127.0.0.1$/0.0.0.0/g' /etc/mongod.conf
+````
