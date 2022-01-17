@@ -1,0 +1,29 @@
+{
+    "builders": [
+        {
+            "type": "yandex",
+            "service_account_key_file": "/Users/kibiv/.secret/key.json",
+            "folder_id": "b1gaitl24uq20bhcooso",
+            "source_image_family": "ubuntu-1604-lts",
+            "image_name": "reddit-base-{{timestamp}}",
+            "image_family": "reddit-base",
+            "ssh_username": "ubuntu",
+            "platform_id": "standard-v1",
+            "subnet_id":"e9bvhqah8bk7r97l9gag",
+            "use_ipv4_nat":"true",
+            "disk_type": "network-hdd"
+        }
+    ],
+"provisioners": [
+    {
+    "type": "shell",
+    "script": "scripts/install_ruby.sh",
+    "execute_command": "sudo {{.Path}}"
+    },
+    {
+    "type": "shell",
+    "script": "scripts/install_mongodb3.sh",
+    "execute_command": "sudo {{.Path}}"
+    }
+]
+}
