@@ -1,2 +1,3 @@
 # HW Сборка образов VM при помощи Packer
 packer/variables.json
+centos-stream-8.json
