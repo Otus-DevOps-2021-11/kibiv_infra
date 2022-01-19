@@ -13,21 +13,6 @@
         "use_ipv4_nat": true
         }
     ],
-    "builders": [
-        {
-            "type": "yandex",
-            "service_account_key_file": "{{ user `yc_service_account_key_file` }}",
-            "folder_id": "{{ user `yc_folder_id` }}",
-            "source_image_family": "{{ user `yc_source_image_family` }}",
-            "image_name": "{{ user `yc_image_family` }}-{{ timestamp | clean_resource_name }}",
-            "image_family": "{{ user `yc_image_family` }}",
-            "ssh_username": "ubuntu",
-            "platform_id": "standard-v1",
-            "subnet_id":"e9bvhqah8bk7r97l9gag",
-            "use_ipv4_nat":"true",
-            "disk_type": "network-hdd"
-        }
-    ],
 "provisioners": [
     {
     "type": "shell",
