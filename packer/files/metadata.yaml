@@ -1,0 +1,15 @@
+#cloud-config
+timezone: Europe/Moscow
+repo_update: true
+repo_upgrade: true
+apt:
+  preserve_sources_list: true
+
+users:
+  - name: appuser
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCvuj4jkqB5r9EvxdSGYqfYCEewC72NUxdBlkMN3h2utea/4w89WHIOeAv+PTHsGyjS9Diyuj/i6i8Kes3xhootmHBWI2i1idxvfYKyzQOJOSV2RGziRQUevOZbnMsdrhEyJ68NLU255i719/+vIKDF1ZROQGlod2JimrPKBDu38lBHfRpP9gplEfdQ+eVUbqxI022f2zduJT2cbMgX8AFZ/qTbcJgFZSvoNigJxCGOgivoFvgXVnADjREmCRJvE6xKibOfIBeABe3Ly9DeBxqlUISvEYipsi88SiDDIiKQ5eDHcxkfa638iUt0NEIAn3Hujf7jM8meWcW1PH1UTjP87ecIg0pqhh/ihN+AiYz07sJoi6U/QIi/3gzPUo5HANduJ87KbHyylGa253dLYeAqWA4LpFhirHU1RMhkiz+FSX8w2eChelj7/U2YZ3pEz+BvhSFN88ZmnjcWg/eVSAL/5vo3YmjK8UqQ6NFewSfrSSvgCenSlF2gIZ4HHtuQDIE= appuser"
+
