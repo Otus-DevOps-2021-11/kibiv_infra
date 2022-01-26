@@ -34,7 +34,7 @@ resource "yandex_compute_instance" "app" {
   user = "ubuntu"
   agent = false
   # путь до приватного ключа
-  private_key = "ubuntu:${file("var.private_key_path")}"
+  private_key = "ubuntu:${file(var.private_key_path)}"
   }
   metadata = {
   ssh-keys = "ubuntu:${file(var.public_key_path)}"
