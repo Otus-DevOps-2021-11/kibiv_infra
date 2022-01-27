@@ -2,3 +2,8 @@
 packer/variables.json
 centos-stream-8.json
 .envrc
+*.tfstate
+*.tfstate.*.backup
+*.tfstate.backup
+*.tfvars
+.terraform/
