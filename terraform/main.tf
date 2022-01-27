@@ -1,9 +1,3 @@
-# provider "yandex" {
-#   token     = "AQAAAAAPL2RiAATuwf2p8j3So01TmCkmP7GV7XQ"
-#   cloud_id  = "b1gjcabcuu2iqig18fnh"
-#   folder_id = "b1gaitl24uq20bhcooso"
-#   zone      = "ru-central1-a"
-# }
 provider "yandex" {
   token     = var.service_account_key_file
   cloud_id  = var.cloud_id
@@ -46,4 +40,13 @@ resource "yandex_compute_instance" "app" {
   provisioner "remote-exec" {
   script = "files/deploy.sh"
   }
+resource "yandex_vpc_network" "app-network" {
+  name = "reddit-app-network"
+}
+resource "yandex_vpc_subnet" "app-subnet" {
+  name           = "reddit-app-subnet"
+  zone           = "ru-central1-a"
+  network_id     = "${yandex_vpc_network.app-network.id}"
+  v4_cidr_blocks = ["192.168.10.0/24"]
+}
 }
